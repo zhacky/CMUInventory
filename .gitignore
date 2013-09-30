@@ -222,5 +222,4 @@ pip-log.txt
 #############
 ## Db log file
 #############
-*.mdf
-*.ldf
+

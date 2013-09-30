@@ -29,6 +29,8 @@ Partial Class MainFormMDI
         Me.FileMenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProductsF2ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TemplatesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.InventoryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditMenu = New System.Windows.Forms.ToolStripMenuItem()
@@ -73,8 +75,10 @@ Partial Class MainFormMDI
         Me.tsbTemplates = New System.Windows.Forms.ToolStripButton()
         Me.tsbInventory = New System.Windows.Forms.ToolStripButton()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.TemplatesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.InventoryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.WareHouseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
+        Me.AddWareHouseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ViewWareHousesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.ToolStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
@@ -93,7 +97,7 @@ Partial Class MainFormMDI
         '
         'FileMenu
         '
-        Me.FileMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProductsF2ToolStripMenuItem, Me.ReportsToolStripMenuItem, Me.TemplatesToolStripMenuItem, Me.InventoryToolStripMenuItem, Me.ToolStripSeparator3, Me.ExitToolStripMenuItem})
+        Me.FileMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProductsF2ToolStripMenuItem, Me.ReportsToolStripMenuItem, Me.TemplatesToolStripMenuItem, Me.InventoryToolStripMenuItem, Me.ToolStripSeparator4, Me.WareHouseToolStripMenuItem, Me.ToolStripSeparator3, Me.ExitToolStripMenuItem})
         Me.FileMenu.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder
         Me.FileMenu.Name = "FileMenu"
         Me.FileMenu.Size = New System.Drawing.Size(37, 20)
@@ -112,6 +116,20 @@ Partial Class MainFormMDI
         Me.ReportsToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F3
         Me.ReportsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ReportsToolStripMenuItem.Text = "&Reports"
+        '
+        'TemplatesToolStripMenuItem
+        '
+        Me.TemplatesToolStripMenuItem.Name = "TemplatesToolStripMenuItem"
+        Me.TemplatesToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F4
+        Me.TemplatesToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.TemplatesToolStripMenuItem.Text = "&Templates"
+        '
+        'InventoryToolStripMenuItem
+        '
+        Me.InventoryToolStripMenuItem.Name = "InventoryToolStripMenuItem"
+        Me.InventoryToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5
+        Me.InventoryToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.InventoryToolStripMenuItem.Text = "&Inventory"
         '
         'ToolStripSeparator3
         '
@@ -438,19 +456,29 @@ Partial Class MainFormMDI
         Me.ToolStrip1.TabIndex = 11
         Me.ToolStrip1.Text = "ToolStrip1"
         '
-        'TemplatesToolStripMenuItem
+        'WareHouseToolStripMenuItem
         '
-        Me.TemplatesToolStripMenuItem.Name = "TemplatesToolStripMenuItem"
-        Me.TemplatesToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F4
-        Me.TemplatesToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.TemplatesToolStripMenuItem.Text = "&Templates"
+        Me.WareHouseToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddWareHouseToolStripMenuItem, Me.ViewWareHousesToolStripMenuItem})
+        Me.WareHouseToolStripMenuItem.Name = "WareHouseToolStripMenuItem"
+        Me.WareHouseToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.WareHouseToolStripMenuItem.Text = "&WareHouse"
         '
-        'InventoryToolStripMenuItem
+        'ToolStripSeparator4
         '
-        Me.InventoryToolStripMenuItem.Name = "InventoryToolStripMenuItem"
-        Me.InventoryToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5
-        Me.InventoryToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.InventoryToolStripMenuItem.Text = "&Inventory"
+        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(149, 6)
+        '
+        'AddWareHouseToolStripMenuItem
+        '
+        Me.AddWareHouseToolStripMenuItem.Name = "AddWareHouseToolStripMenuItem"
+        Me.AddWareHouseToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.AddWareHouseToolStripMenuItem.Text = "&Add WareHouse"
+        '
+        'ViewWareHousesToolStripMenuItem
+        '
+        Me.ViewWareHousesToolStripMenuItem.Name = "ViewWareHousesToolStripMenuItem"
+        Me.ViewWareHousesToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.ViewWareHousesToolStripMenuItem.Text = "&View WareHouses"
         '
         'MainFormMDI
         '
@@ -529,5 +557,9 @@ Partial Class MainFormMDI
     Friend WithEvents ReportsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents TemplatesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents InventoryToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator4 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents WareHouseToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AddWareHouseToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ViewWareHousesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

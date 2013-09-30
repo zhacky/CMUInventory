@@ -94,6 +94,12 @@
     <Compile Include="Forms\dlgAddNewProduct.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\dlgAddWareHouse.Designer.vb">
+      <DependentUpon>dlgAddWareHouse.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\dlgAddWareHouse.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\dlgOptions.Designer.vb">
       <DependentUpon>dlgOptions.vb</DependentUpon>
     </Compile>
@@ -123,6 +129,12 @@
       <DependentUpon>frmReports.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmReports.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmWareHouseList.Designer.vb">
+      <DependentUpon>frmWareHouseList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmWareHouseList.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\MainFormMDI.Designer.vb">
@@ -171,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmReports.resx">
       <DependentUpon>frmReports.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmWareHouseList.resx">
+      <DependentUpon>frmWareHouseList.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainFormMDI.resx">
       <DependentUpon>MainFormMDI.vb</DependentUpon>
