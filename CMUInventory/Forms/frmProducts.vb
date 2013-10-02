@@ -30,6 +30,9 @@
     End Sub
 
     Private Sub ProductsDataGridView_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles ProductsDataGridView.CellContentClick
+        If ProductsDataGridView.Rows(e.RowIndex).IsNewRow Then
+            Exit Sub
+        End If
         If (e.RowIndex >= 0 And ProductsDataGridView.Columns(e.ColumnIndex).Name = "btnEditUpdate") Then
             Dim drv As DataRowView = ProductsDataGridView.Rows(e.RowIndex).DataBoundItem
             Dim editProduct As New dlgAddNewProduct(Convert.ToInt32(drv.Row("ProductID")))
@@ -61,15 +64,16 @@
             End If
         End If
     End Sub
+
+    Private Sub btnRefresh_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnRefresh.Click
+        Me.ProductsTableAdapter.Fill(Me.BodegaDataSet.Products)
+        Me.ProductsDataGridView.Refresh()
+    End Sub
+
 #End Region
 
 #Region "DataGrid View Update"
     
 #End Region
 
-   
-    Private Sub btnRefresh_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnRefresh.Click
-        Me.ProductsTableAdapter.Fill(Me.BodegaDataSet.Products)
-        Me.ProductsDataGridView.Refresh()
-    End Sub
 End Class

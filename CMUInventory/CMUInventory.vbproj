@@ -88,6 +88,12 @@
     <Compile Include="bodegaDataSet.vb">
       <DependentUpon>bodegaDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Forms\dlgAddEditTransactionType.Designer.vb">
+      <DependentUpon>dlgAddEditTransactionType.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\dlgAddEditTransactionType.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\dlgAddNewProduct.Designer.vb">
       <DependentUpon>dlgAddNewProduct.vb</DependentUpon>
     </Compile>
@@ -104,6 +110,12 @@
       <DependentUpon>dlgOptions.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\dlgOptions.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAddNewTransaction.Designer.vb">
+      <DependentUpon>frmAddNewTransaction.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAddNewTransaction.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\frmDbSettings.vb">
@@ -143,12 +155,21 @@
     <Compile Include="Forms\MainFormMDI.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\ViewTransactionType.Designer.vb">
+      <DependentUpon>ViewTransactionType.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ViewTransactionType.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modules\AppInit.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>AppInit.settings</DependentUpon>
     </Compile>
+    <Compile Include="Modules\DummyClass.vb" />
     <Compile Include="Modules\DatabaseModule.vb" />
+    <Compile Include="Modules\Objects\Product.vb" />
+    <Compile Include="Modules\Objects\Template.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -164,13 +185,27 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="TransactionDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TransactionDataSet.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\dlgAddEditTransactionType.resx">
+      <DependentUpon>dlgAddEditTransactionType.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\dlgAddNewProduct.resx">
       <DependentUpon>dlgAddNewProduct.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\dlgAddWareHouse.resx">
+      <DependentUpon>dlgAddWareHouse.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\dlgOptions.resx">
       <DependentUpon>dlgOptions.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAddNewTransaction.resx">
+      <DependentUpon>frmAddNewTransaction.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmDbSettings.resx">
       <DependentUpon>frmDbSettings.vb</DependentUpon>
@@ -189,6 +224,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainFormMDI.resx">
       <DependentUpon>MainFormMDI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ViewTransactionType.resx">
+      <DependentUpon>ViewTransactionType.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -229,6 +267,17 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="TransactionDataSet.xsc">
+      <DependentUpon>TransactionDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TransactionDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TransactionDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TransactionDataSet.xss">
+      <DependentUpon>TransactionDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

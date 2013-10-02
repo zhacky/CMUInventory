@@ -29,6 +29,7 @@ Partial Class dlgAddNewProduct
         Dim SalePriceLabel As System.Windows.Forms.Label
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Cancel_Button = New System.Windows.Forms.Button()
+        Me.btnSaveNewProductAndClose = New System.Windows.Forms.Button()
         Me.BodegaDataSet = New CMUInventory.bodegaDataSet()
         Me.ProductsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ProductsTableAdapter = New CMUInventory.bodegaDataSetTableAdapters.ProductsTableAdapter()
@@ -38,7 +39,6 @@ Partial Class dlgAddNewProduct
         Me.AttributesTextBox = New System.Windows.Forms.TextBox()
         Me.SalePriceTextBox = New System.Windows.Forms.TextBox()
         Me.btnSaveNewProduct = New System.Windows.Forms.Button()
-        Me.btnSaveNewProductAndClose = New System.Windows.Forms.Button()
         Me.erpAddNewProduct = New System.Windows.Forms.ErrorProvider(Me.components)
         BarcodeLabel = New System.Windows.Forms.Label()
         ProductNameLabel = New System.Windows.Forms.Label()
@@ -116,6 +116,17 @@ Partial Class dlgAddNewProduct
         Me.Cancel_Button.TabIndex = 8
         Me.Cancel_Button.Text = "Cancel"
         '
+        'btnSaveNewProductAndClose
+        '
+        Me.btnSaveNewProductAndClose.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnSaveNewProductAndClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSaveNewProductAndClose.Location = New System.Drawing.Point(7, 3)
+        Me.btnSaveNewProductAndClose.Name = "btnSaveNewProductAndClose"
+        Me.btnSaveNewProductAndClose.Size = New System.Drawing.Size(133, 23)
+        Me.btnSaveNewProductAndClose.TabIndex = 6
+        Me.btnSaveNewProductAndClose.Text = "Save And Close"
+        Me.btnSaveNewProductAndClose.UseVisualStyleBackColor = True
+        '
         'BodegaDataSet
         '
         Me.BodegaDataSet.DataSetName = "bodegaDataSet"
@@ -133,8 +144,10 @@ Partial Class dlgAddNewProduct
         'TableAdapterManager
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.InventoryTableAdapter = Nothing
         Me.TableAdapterManager.ProductsTableAdapter = Me.ProductsTableAdapter
         Me.TableAdapterManager.UpdateOrder = CMUInventory.bodegaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.WareHouseTableAdapter = Nothing
         '
         'BarcodeTextBox
         '
@@ -180,17 +193,6 @@ Partial Class dlgAddNewProduct
         Me.btnSaveNewProduct.TabIndex = 5
         Me.btnSaveNewProduct.Text = "Save And New"
         Me.btnSaveNewProduct.UseVisualStyleBackColor = True
-        '
-        'btnSaveNewProductAndClose
-        '
-        Me.btnSaveNewProductAndClose.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btnSaveNewProductAndClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSaveNewProductAndClose.Location = New System.Drawing.Point(7, 3)
-        Me.btnSaveNewProductAndClose.Name = "btnSaveNewProductAndClose"
-        Me.btnSaveNewProductAndClose.Size = New System.Drawing.Size(133, 23)
-        Me.btnSaveNewProductAndClose.TabIndex = 6
-        Me.btnSaveNewProductAndClose.Text = "Save And Close"
-        Me.btnSaveNewProductAndClose.UseVisualStyleBackColor = True
         '
         'erpAddNewProduct
         '

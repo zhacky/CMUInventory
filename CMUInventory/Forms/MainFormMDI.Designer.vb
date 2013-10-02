@@ -31,6 +31,16 @@ Partial Class MainFormMDI
         Me.ReportsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TemplatesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InventoryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
+        Me.WareHouseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AddWareHouseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ViewWareHousesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TransactionTypeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AddNewTransactionTypeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ViewTransactionTypesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TransactionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ViewTransactionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AddNewTransactionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditMenu = New System.Windows.Forms.ToolStripMenuItem()
@@ -75,10 +85,6 @@ Partial Class MainFormMDI
         Me.tsbTemplates = New System.Windows.Forms.ToolStripButton()
         Me.tsbInventory = New System.Windows.Forms.ToolStripButton()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.WareHouseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
-        Me.AddWareHouseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ViewWareHousesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.ToolStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
@@ -97,7 +103,7 @@ Partial Class MainFormMDI
         '
         'FileMenu
         '
-        Me.FileMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProductsF2ToolStripMenuItem, Me.ReportsToolStripMenuItem, Me.TemplatesToolStripMenuItem, Me.InventoryToolStripMenuItem, Me.ToolStripSeparator4, Me.WareHouseToolStripMenuItem, Me.ToolStripSeparator3, Me.ExitToolStripMenuItem})
+        Me.FileMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProductsF2ToolStripMenuItem, Me.ReportsToolStripMenuItem, Me.TemplatesToolStripMenuItem, Me.InventoryToolStripMenuItem, Me.ToolStripSeparator4, Me.WareHouseToolStripMenuItem, Me.TransactionTypeToolStripMenuItem, Me.TransactionsToolStripMenuItem, Me.ToolStripSeparator3, Me.ExitToolStripMenuItem})
         Me.FileMenu.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder
         Me.FileMenu.Name = "FileMenu"
         Me.FileMenu.Size = New System.Drawing.Size(37, 20)
@@ -107,39 +113,102 @@ Partial Class MainFormMDI
         '
         Me.ProductsF2ToolStripMenuItem.Name = "ProductsF2ToolStripMenuItem"
         Me.ProductsF2ToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2
-        Me.ProductsF2ToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ProductsF2ToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
         Me.ProductsF2ToolStripMenuItem.Text = "&Products"
         '
         'ReportsToolStripMenuItem
         '
         Me.ReportsToolStripMenuItem.Name = "ReportsToolStripMenuItem"
         Me.ReportsToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F3
-        Me.ReportsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ReportsToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
         Me.ReportsToolStripMenuItem.Text = "&Reports"
         '
         'TemplatesToolStripMenuItem
         '
         Me.TemplatesToolStripMenuItem.Name = "TemplatesToolStripMenuItem"
         Me.TemplatesToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F4
-        Me.TemplatesToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.TemplatesToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
         Me.TemplatesToolStripMenuItem.Text = "&Templates"
         '
         'InventoryToolStripMenuItem
         '
         Me.InventoryToolStripMenuItem.Name = "InventoryToolStripMenuItem"
         Me.InventoryToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5
-        Me.InventoryToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.InventoryToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
         Me.InventoryToolStripMenuItem.Text = "&Inventory"
+        '
+        'ToolStripSeparator4
+        '
+        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(162, 6)
+        '
+        'WareHouseToolStripMenuItem
+        '
+        Me.WareHouseToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddWareHouseToolStripMenuItem, Me.ViewWareHousesToolStripMenuItem})
+        Me.WareHouseToolStripMenuItem.Name = "WareHouseToolStripMenuItem"
+        Me.WareHouseToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
+        Me.WareHouseToolStripMenuItem.Text = "&WareHouse"
+        '
+        'AddWareHouseToolStripMenuItem
+        '
+        Me.AddWareHouseToolStripMenuItem.Name = "AddWareHouseToolStripMenuItem"
+        Me.AddWareHouseToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.AddWareHouseToolStripMenuItem.Text = "&Add WareHouse"
+        '
+        'ViewWareHousesToolStripMenuItem
+        '
+        Me.ViewWareHousesToolStripMenuItem.Name = "ViewWareHousesToolStripMenuItem"
+        Me.ViewWareHousesToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.ViewWareHousesToolStripMenuItem.Text = "&View WareHouses"
+        '
+        'TransactionTypeToolStripMenuItem
+        '
+        Me.TransactionTypeToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddNewTransactionTypeToolStripMenuItem, Me.ViewTransactionTypesToolStripMenuItem})
+        Me.TransactionTypeToolStripMenuItem.Name = "TransactionTypeToolStripMenuItem"
+        Me.TransactionTypeToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
+        Me.TransactionTypeToolStripMenuItem.Text = "Tran&saction Type"
+        '
+        'AddNewTransactionTypeToolStripMenuItem
+        '
+        Me.AddNewTransactionTypeToolStripMenuItem.Name = "AddNewTransactionTypeToolStripMenuItem"
+        Me.AddNewTransactionTypeToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
+        Me.AddNewTransactionTypeToolStripMenuItem.Text = "&Add New Transaction Type"
+        '
+        'ViewTransactionTypesToolStripMenuItem
+        '
+        Me.ViewTransactionTypesToolStripMenuItem.Name = "ViewTransactionTypesToolStripMenuItem"
+        Me.ViewTransactionTypesToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
+        Me.ViewTransactionTypesToolStripMenuItem.Text = "&View Transaction Types"
+        '
+        'TransactionsToolStripMenuItem
+        '
+        Me.TransactionsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ViewTransactionsToolStripMenuItem, Me.AddNewTransactionToolStripMenuItem})
+        Me.TransactionsToolStripMenuItem.Name = "TransactionsToolStripMenuItem"
+        Me.TransactionsToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
+        Me.TransactionsToolStripMenuItem.Text = "Transa&ctions"
+        '
+        'ViewTransactionsToolStripMenuItem
+        '
+        Me.ViewTransactionsToolStripMenuItem.Name = "ViewTransactionsToolStripMenuItem"
+        Me.ViewTransactionsToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
+        Me.ViewTransactionsToolStripMenuItem.Text = "&View Transactions"
+        '
+        'AddNewTransactionToolStripMenuItem
+        '
+        Me.AddNewTransactionToolStripMenuItem.Name = "AddNewTransactionToolStripMenuItem"
+        Me.AddNewTransactionToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F6
+        Me.AddNewTransactionToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
+        Me.AddNewTransactionToolStripMenuItem.Text = "&Add New Transaction"
         '
         'ToolStripSeparator3
         '
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(149, 6)
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(162, 6)
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
         Me.ExitToolStripMenuItem.Text = "E&xit"
         '
         'EditMenu
@@ -201,7 +270,7 @@ Partial Class MainFormMDI
         Me.ToolBarToolStripMenuItem.CheckOnClick = True
         Me.ToolBarToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked
         Me.ToolBarToolStripMenuItem.Name = "ToolBarToolStripMenuItem"
-        Me.ToolBarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ToolBarToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
         Me.ToolBarToolStripMenuItem.Text = "&Toolbar"
         '
         'StatusBarToolStripMenuItem
@@ -210,7 +279,7 @@ Partial Class MainFormMDI
         Me.StatusBarToolStripMenuItem.CheckOnClick = True
         Me.StatusBarToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked
         Me.StatusBarToolStripMenuItem.Name = "StatusBarToolStripMenuItem"
-        Me.StatusBarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.StatusBarToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
         Me.StatusBarToolStripMenuItem.Text = "&Status Bar"
         '
         'ToolsMenu
@@ -223,7 +292,7 @@ Partial Class MainFormMDI
         'OptionsToolStripMenuItem
         '
         Me.OptionsToolStripMenuItem.Name = "OptionsToolStripMenuItem"
-        Me.OptionsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.OptionsToolStripMenuItem.Size = New System.Drawing.Size(116, 22)
         Me.OptionsToolStripMenuItem.Text = "&Options"
         '
         'WindowsMenu
@@ -236,37 +305,37 @@ Partial Class MainFormMDI
         'NewWindowToolStripMenuItem
         '
         Me.NewWindowToolStripMenuItem.Name = "NewWindowToolStripMenuItem"
-        Me.NewWindowToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.NewWindowToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.NewWindowToolStripMenuItem.Text = "&New Window"
         '
         'CascadeToolStripMenuItem
         '
         Me.CascadeToolStripMenuItem.Name = "CascadeToolStripMenuItem"
-        Me.CascadeToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.CascadeToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.CascadeToolStripMenuItem.Text = "&Cascade"
         '
         'TileVerticalToolStripMenuItem
         '
         Me.TileVerticalToolStripMenuItem.Name = "TileVerticalToolStripMenuItem"
-        Me.TileVerticalToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.TileVerticalToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.TileVerticalToolStripMenuItem.Text = "Tile &Vertical"
         '
         'TileHorizontalToolStripMenuItem
         '
         Me.TileHorizontalToolStripMenuItem.Name = "TileHorizontalToolStripMenuItem"
-        Me.TileHorizontalToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.TileHorizontalToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.TileHorizontalToolStripMenuItem.Text = "Tile &Horizontal"
         '
         'CloseAllToolStripMenuItem
         '
         Me.CloseAllToolStripMenuItem.Name = "CloseAllToolStripMenuItem"
-        Me.CloseAllToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.CloseAllToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.CloseAllToolStripMenuItem.Text = "C&lose All"
         '
         'ArrangeIconsToolStripMenuItem
         '
         Me.ArrangeIconsToolStripMenuItem.Name = "ArrangeIconsToolStripMenuItem"
-        Me.ArrangeIconsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ArrangeIconsToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.ArrangeIconsToolStripMenuItem.Text = "&Arrange Icons"
         '
         'HelpMenu
@@ -456,30 +525,6 @@ Partial Class MainFormMDI
         Me.ToolStrip1.TabIndex = 11
         Me.ToolStrip1.Text = "ToolStrip1"
         '
-        'WareHouseToolStripMenuItem
-        '
-        Me.WareHouseToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddWareHouseToolStripMenuItem, Me.ViewWareHousesToolStripMenuItem})
-        Me.WareHouseToolStripMenuItem.Name = "WareHouseToolStripMenuItem"
-        Me.WareHouseToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.WareHouseToolStripMenuItem.Text = "&WareHouse"
-        '
-        'ToolStripSeparator4
-        '
-        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(149, 6)
-        '
-        'AddWareHouseToolStripMenuItem
-        '
-        Me.AddWareHouseToolStripMenuItem.Name = "AddWareHouseToolStripMenuItem"
-        Me.AddWareHouseToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
-        Me.AddWareHouseToolStripMenuItem.Text = "&Add WareHouse"
-        '
-        'ViewWareHousesToolStripMenuItem
-        '
-        Me.ViewWareHousesToolStripMenuItem.Name = "ViewWareHousesToolStripMenuItem"
-        Me.ViewWareHousesToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
-        Me.ViewWareHousesToolStripMenuItem.Text = "&View WareHouses"
-        '
         'MainFormMDI
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -561,5 +606,11 @@ Partial Class MainFormMDI
     Friend WithEvents WareHouseToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AddWareHouseToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ViewWareHousesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TransactionTypeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AddNewTransactionTypeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ViewTransactionTypesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TransactionsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ViewTransactionsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AddNewTransactionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

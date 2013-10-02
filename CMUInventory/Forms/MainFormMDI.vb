@@ -2,10 +2,10 @@
 Imports System.Windows.Forms.Keys
 
 Public Class MainFormMDI
-#Region "Setting the Shortcut keys"
+#Region "Old/Default Codes"
     'ToolStripMenuItem1.ShortcutKeys = F6 
     '    tsbProducts.ShortcutKeys = F2
-#End Region
+
     Private Sub ShowNewForm(ByVal sender As Object, ByVal e As EventArgs) Handles NewToolStripButton.Click, NewWindowToolStripMenuItem.Click
         ' Create a new instance of the child form.
         Dim ChildForm As New System.Windows.Forms.Form
@@ -38,7 +38,6 @@ Public Class MainFormMDI
             ' TODO: Add code here to save the current contents of the form to a file.
         End If
     End Sub
-
 
     Private Sub ExitToolsStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles ExitToolStripMenuItem.Click
         Me.Close()
@@ -97,11 +96,6 @@ Public Class MainFormMDI
     End Sub
 
     Private m_ChildFormNumber As Integer
-
-    Private Sub OptionsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OptionsToolStripMenuItem.Click
-        dlgOptions.ShowDialog()
-    End Sub
-
     Private Sub UndoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
     End Sub
@@ -109,30 +103,31 @@ Public Class MainFormMDI
     Private Sub SelectAllToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SelectAllToolStripMenuItem.Click
 
     End Sub
+#End Region
+
+
+#Region "Menu Item Clicks"
+
+    Private Sub OptionsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OptionsToolStripMenuItem.Click
+        dlgOptions.ShowDialog()
+    End Sub
+
+    Private Sub ReportsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ReportsToolStripMenuItem.Click
+        ShowReportsForm()
+    End Sub
 
     Private Sub tsbProducts_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsbProducts.Click
         ShowProductsForm()
     End Sub
 
-
-    '-----   MY METHODS     -----
-#Region "Methods"
-
-
-    Private Sub ShowProductsForm()
-        If Me.HasChildren() Then
-            Dim numOfChild As Integer = Me.MdiChildren.Count()
-            If numOfChild < 8 Then
-
-                Dim ChildForm As New frmProducts
-
-                ChildForm.MdiParent = Me
-                ChildForm.Show()
-                ' Make it a child of this MDI form before showing it.
-            End If
-        End If
+    Private Sub ViewWareHousesToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ViewWareHousesToolStripMenuItem.Click
+        ShowWareHouseForm()
     End Sub
 
+    Private Sub AddWareHouseToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddWareHouseToolStripMenuItem.Click
+        Dim addwarehouse As New dlgAddWareHouse
+        addwarehouse.ShowDialog()
+    End Sub
 
     Private Sub ProductsF2ToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ProductsF2ToolStripMenuItem.Click
         ShowProductsForm()
@@ -142,25 +137,97 @@ Public Class MainFormMDI
         ShowReportsForm()
     End Sub
 
-    Private Sub ShowReportsForm()
-        If Me.HasChildren() Then
-            Dim numOfChild As Integer = Me.MdiChildren.Count()
-            If numOfChild < 8 Then
-
-                Dim ChildForm As New frmReports
-
-                ChildForm.MdiParent = Me
-
-
-                ChildForm.Text = "Reports "
-
-                ChildForm.Show()
-            End If
-        End If
+    Private Sub ViewTransactionTypesToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ViewTransactionTypesToolStripMenuItem.Click
+        ShowTransactionTypeForm()
     End Sub
+
+    Private Sub AddNewTransactionTypeToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddNewTransactionTypeToolStripMenuItem.Click
+        Dim dlgTransType As New dlgAddEditTransactionType
+        dlgTransType.ShowDialog()
+    End Sub
+
 #End Region
 
-    Private Sub ReportsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ReportsToolStripMenuItem.Click
-        ShowReportsForm()
+    '-----   MY METHODS     -----
+#Region "Methods"
+
+
+    Private Sub ShowProductsForm()
+        If Not ChildrenReachedLimit() Then
+
+                Dim ChildForm As New frmProducts
+
+                ChildForm.MdiParent = Me
+                ChildForm.Show()
+                ' Make it a child of this MDI form before showing it.
+            End If
+
+    End Sub
+
+    Private Sub ShowReportsForm()
+        If Not ChildrenReachedLimit() Then
+
+            Dim ChildForm As New frmReports
+
+            ChildForm.MdiParent = Me
+
+
+            ChildForm.Text = "Reports "
+
+            ChildForm.Show()
+
+        End If
+    End Sub
+
+    Private Sub ShowWareHouseForm()
+        If Not ChildrenReachedLimit() Then
+
+            Dim ChildForm As New frmWareHouseList
+
+            ChildForm.MdiParent = Me
+
+
+            ChildForm.Text = "WareHouses "
+
+            ChildForm.Show()
+
+        End If
+    End Sub
+
+    Private Function ChildrenReachedLimit() As Boolean
+        If Me.HasChildren() Then
+
+            If Me.MdiChildren.Count() > 8 Then
+
+                Return True
+
+            End If
+        Else
+            Return False
+        End If
+        Return False
+    End Function
+
+    Private Sub ShowTransactionTypeForm()
+        If Not ChildrenReachedLimit() Then
+
+            Dim ChildForm As New ViewTransactionType
+
+            ChildForm.MdiParent = Me
+
+
+            ChildForm.Text = "Transaction Types "
+
+            ChildForm.Show()
+
+        End If
+    End Sub
+
+#End Region
+
+    Private Sub AddNewTransactionToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddNewTransactionToolStripMenuItem.Click
+        Dim addTransaction As New frmAddNewTransaction
+        addTransaction.MdiParent = Me
+        addTransaction.Show()
     End Sub
 End Class
